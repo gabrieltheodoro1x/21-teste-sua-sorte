@@ -34,3 +34,16 @@ form {
     display: flex;
     flex-direction: column;
 }
+.fe {
+    margin-bottom: 20px;
+    text-align: left;
+    margin-right: 30px;
+}
+
+label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #24292e;
+    display: block;
+    text-align: left;
+}
