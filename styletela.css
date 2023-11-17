@@ -47,3 +47,43 @@ label {
     display: block;
     text-align: left;
 }
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fe:hover input {
+    border-color: #0366d6;
+    box-shadow: 0 0 8px rgba(3, 102, 214, 0.4);
+}
+
+.forgot-senha {
+    font-size: 0.8em;
+    color: #0366d6;
+    text-decoration: none;
+    float: right;
+    transition: color 0.3s ease;
+}
+
+.forgot-senha:hover {
+    color: #004080;
+}
+
+button {
+    padding: 12px;
+    background-color: rgb(49, 40, 167);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: rgb(32, 0, 70);
+}
