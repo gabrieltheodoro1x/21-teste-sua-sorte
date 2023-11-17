@@ -9,3 +9,28 @@ body {
     overflow: hidden;
     background: linear-gradient(to bottom, #6B38FB, #4A238D);
 }
+
+.login {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #0366d6;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
