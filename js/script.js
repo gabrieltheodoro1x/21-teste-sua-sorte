@@ -43,7 +43,8 @@ function vencedor(){
     }
 }
 
-
+let sim;
+let nao;
 
 
 bot.addEventListener('click', function f(){
@@ -55,6 +56,9 @@ bot.addEventListener('click', function f(){
     breaks +=1;
     let num = Math.random();
     let numc = Math.random();
+
+    sim = num;
+    nao = numc;
 
     //player
     if(num>0 && num<0.10){
@@ -119,8 +123,8 @@ bot.addEventListener('click', function f(){
     }
     else if(numc>0.8 && numc<=0.90){
         numbersComputador.push(10);
-    }else if(num>0.9 && num<=1){
-        numbers.push(11);
+    }else if(numc>0.9 && numc<=1){
+        numbersComputador.push(11);
     }
 
     let s = 0;
