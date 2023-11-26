@@ -17,45 +17,6 @@ input {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-right: 5px;
-}
-
-#botao {
-    padding: 30px;
-    margin: 20px;
-    position: absolute;
-    top: 700px;
-    right:75%;
-}
-  
-#passar {
-    padding: 30px;
-    margin: 20px;
-    position: absolute;
-    top: 700px;
-    right: 50%;
-    transform: translateX(50%);
-}
-
-#jogardenovo {
-    padding: 30px;
-    margin: 20px;
-    position: absolute;
-    top: 700px;
-    right: 25%;
-    transform: translateX(50%);
-}
-
-#somac{
-    position: absolute;
-    right: 38%;
-    transform: translateX(50%);
-}
-
-#soma{
-    position: absolute;
-    right: 65%;
-    transform: translateX(-50%);
-}
 
 .header {
     text-align: center;
