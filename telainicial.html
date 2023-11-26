@@ -10,7 +10,7 @@
     <div class="login">
         <img class="logo" src="img/21logo.png" alt="21 logo">
         <h2>Bem vindo ao Black Jack 21</h2>
-        <form onsubmit="return false;">
+        <form action="processa_login.php" method="POST">
             <div class="fe">
                 <label for="usuario">Usuário</label>
                 <input type="text" id="usuario" name="usuario" required>
@@ -18,13 +18,12 @@
 
             <div class="fe">
                 <label for="senha">Senha</label>
-                <input type="senha" id="senha" name="senha" required>
+                <input type="password" id="senha" name="senha" required>
             </div>
-
-            <button onclick="logar();  return false" type="submit">Entrar</button>
+             <!-- <button onclick="logar();  return false" type="submit">Entrar</button> -->
+            <button type="submit">Entrar</button>
             <p style="color:#004080">Não está cadastrado? <a href="cad.html">Cadastre-se</a></p>
         </form> 
     </div>
-    <script src="./js/login.js"></script>
 </body>
 </html>
