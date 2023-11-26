@@ -1,13 +1,11 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    background: linear-gradient(to right, #5f015f, rgb(188, 14, 201));
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #6B38FB, #4A238D);
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
 
