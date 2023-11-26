@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="styletela.css">
+</head>
+<body>
+    <div class="login">
+        <img class="logo" src="img/21logo.png" alt="21 logo">
+        <h2>Bem vindo ao Black Jack 21</h2>
+        <form>
+            <div class="fe">
+                <label for="usuarioCad">Usuário</label>
+                <input type="text" id="usuarioCad" name="usuario" required>
+            </div>
+
+            <div class="fe">
+                <label for="senhaCad">Senha </a></label>
+                <input type="senha" id="senhaCad" name="senha" required>
+            </div>
+
+            <button onclick="cadastrar();  return false" type="submit">Cadastrar</button>
+            
+        </form> 
+    </div>
+    <script src="./js/login.js"></script>
+</body>
+</html>
