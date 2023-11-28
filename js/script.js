@@ -3,12 +3,37 @@ let nj = document.getElementById('novoJogo');
 let cp = document.getElementById('comprar');
 let pa = document.getElementById('parar');
 let res = document.getElementById('resultado');
+let ponto = document.getElementById('ponto');
+let n1 = document.getElementById('name1');
+let p1 = document.getElementById('pos1');
+let n2 = document.getElementById('name2');
+let p2 = document.getElementById('pos2');
+let count = 0;
+let count2 = 0;
 
 nj.addEventListener('click', iniciarJogo);
 cp.addEventListener('click', comprar);
 pa.addEventListener('click', parar);
 
 let pontuacaoJogador, pontuacaoComputador, cartasJogador, cartasComputador, jogoEncerrado;
+
+count = parseInt(localStorage.getItem('pontuacaoTotal')) || 0;
+ponto.innerHTML = 'Pontuação Total: ' + count;
+
+count2 = parseInt(localStorage.getItem('pontuacaoTotalC')) || 0;
+
+if (count > count2) {
+    n1.innerHTML = "Player";
+    p1.innerHTML = count;
+    n2.innerHTML = "Computador";
+    p2.innerHTML = count2;
+} else if (count < count2) {
+    n2.innerHTML = "Player";
+    p2.innerHTML = count;
+    n1.innerHTML = "Computador";
+    p1.innerHTML = count2;
+}
+
 
 function iniciarJogo() {
     pontuacaoJogador = 0;
@@ -54,18 +79,21 @@ function atualizarPontuacoes() {
 
     if (pontuacaoJogador === 21 && cartasJogador.length === 2) {
         res.innerHTML = 'Blackjack! Você venceu!';
+        count+=1;
         jogoEncerrado = true;
         encerrarJogo();
     }
 
     if (pontuacaoJogador > 21) {
         res.innerHTML = 'Você estourou! Computador vence!';
+        count2+=1;
         jogoEncerrado = true;
         encerrarJogo();
     }
 
     if (pontuacaoComputador === 21) {
         res.innerHTML = 'Computador fez Blackjack. Você perdeu!';
+        count2+=1;
         jogoEncerrado = true;
         encerrarJogo();
     }
@@ -106,24 +134,55 @@ function parar() {
         cartasComputador.push(obterProximaCarta());
         atualizarPontuacoes();
     }
+    
 
     if (pontuacaoComputador > 21) {
         res.innerHTML  = 'Computador estourou. Você venceu!';
+        count+=1;
+        ponto.innerHTML = 'Pontuação Total: '+ count;
+        localStorage.setItem('pontuacaoTotal', count);
+        jogoEncerrado = true;
+        encerrarJogo();
     } else if (pontuacaoComputador > pontuacaoJogador) {
+        count2+=1;
         res.innerHTML  = 'Computador vence!';
+        localStorage.setItem('pontuacaoTotal', count);
+        localStorage.setItem('pontuacaoTotalC', count2);
+        jogoEncerrado = true;
+        encerrarJogo();
     } else if (pontuacaoComputador < pontuacaoJogador) {
         res.innerHTML = 'Você venceu!';
+        count+=1;
+        ponto.innerHTML = 'Pontuação Total: '+ count;
+        localStorage.setItem('pontuacaoTotal', count);
+        jogoEncerrado = true;
+        encerrarJogo();
     } else {
         res.innerHTML  = 'Empate!';
+        localStorage.setItem('pontuacaoTotal', count);
+        jogoEncerrado = true;
+        encerrarJogo();
     }
 
-    jogoEncerrado = true;
-    encerrarJogo();
+
 }
 
 function encerrarJogo() {
+    
     nj.disabled = false;
     cp.disabled = true;
     pa.disabled = true;
+    localStorage.setItem('pontuacaoTotal', count);
+    localStorage.setItem('pontuacaoTotalC', count2);
+    if (count > count2) {
+        n1.innerHTML = "Player";
+        p1.innerHTML = count;
+        n2.innerHTML = "Computador";
+        p2.innerHTML = count2;
+    } else if (count < count2) {
+        n2.innerHTML = "Player";
+        p2.innerHTML = count;
+        n1.innerHTML = "Computador";
+        p1.innerHTML = count2;
+    }
 }
-
