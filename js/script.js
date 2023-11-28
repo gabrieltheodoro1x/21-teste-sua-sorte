@@ -8,8 +8,11 @@ let n1 = document.getElementById('name1');
 let p1 = document.getElementById('pos1');
 let n2 = document.getElementById('name2');
 let p2 = document.getElementById('pos2');
+
 let count = 0;
 let count2 = 0;
+
+
 
 nj.addEventListener('click', iniciarJogo);
 cp.addEventListener('click', comprar);
@@ -34,6 +37,11 @@ if (count > count2) {
     p1.innerHTML = count2;
 }
 
+cheet('a b a', function () {
+    window.location.href = "egg.html";
+    
+});
+
 
 function iniciarJogo() {
     pontuacaoJogador = 0;
@@ -41,7 +49,8 @@ function iniciarJogo() {
     cartasJogador = [];
     cartasComputador = [];
     jogoEncerrado = false;
-    res.innerHTML = '';
+    res.innerHTML = 'aaaaaaaaaaaaaaaaaaa';
+    res.style.visibility = "hidden";
     nj.disabled = true;
     cp.disabled = false;
     pa.disabled = false;
@@ -74,10 +83,11 @@ function atualizarPontuacoes() {
     pontuacaoJogador = calcularPontuacao(cartasJogador);
     pontuacaoComputador = calcularPontuacao(cartasComputador);
 
-    document.getElementById('pontuacaoJogador').innerHTML = 'Sua pontuação: ' + pontuacaoJogador;
-    document.getElementById('pontuacaoComputador').innerHTML = 'Pontuação do Computador: ' + pontuacaoComputador;
+    document.getElementById('pontuacaoJogador').innerHTML = pontuacaoJogador;
+    document.getElementById('pontuacaoComputador').innerHTML = pontuacaoComputador;
 
     if (pontuacaoJogador === 21 && cartasJogador.length === 2) {
+        res.style.visibility = "visible";
         res.innerHTML = 'Blackjack! Você venceu!';
         count+=1;
         jogoEncerrado = true;
@@ -85,6 +95,7 @@ function atualizarPontuacoes() {
     }
 
     if (pontuacaoJogador > 21) {
+        res.style.visibility = "visible";
         res.innerHTML = 'Você estourou! Computador vence!';
         count2+=1;
         jogoEncerrado = true;
@@ -92,6 +103,7 @@ function atualizarPontuacoes() {
     }
 
     if (pontuacaoComputador === 21) {
+        res.style.visibility = "visible";
         res.innerHTML = 'Computador fez Blackjack. Você perdeu!';
         count2+=1;
         jogoEncerrado = true;
@@ -137,6 +149,7 @@ function parar() {
     
 
     if (pontuacaoComputador > 21) {
+        res.style.visibility = "visible";
         res.innerHTML  = 'Computador estourou. Você venceu!';
         count+=1;
         ponto.innerHTML = 'Pontuação Total: '+ count;
@@ -145,12 +158,14 @@ function parar() {
         encerrarJogo();
     } else if (pontuacaoComputador > pontuacaoJogador) {
         count2+=1;
+        res.style.visibility = "visible";
         res.innerHTML  = 'Computador vence!';
         localStorage.setItem('pontuacaoTotal', count);
         localStorage.setItem('pontuacaoTotalC', count2);
         jogoEncerrado = true;
         encerrarJogo();
     } else if (pontuacaoComputador < pontuacaoJogador) {
+        res.style.visibility = "visible";
         res.innerHTML = 'Você venceu!';
         count+=1;
         ponto.innerHTML = 'Pontuação Total: '+ count;
@@ -158,6 +173,7 @@ function parar() {
         jogoEncerrado = true;
         encerrarJogo();
     } else {
+        res.style.visibility = "visible";
         res.innerHTML  = 'Empate!';
         localStorage.setItem('pontuacaoTotal', count);
         jogoEncerrado = true;
@@ -186,3 +202,34 @@ function encerrarJogo() {
         p1.innerHTML = count2;
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const cor = document.querySelectorAll('.cor');
+    const resetar = document.querySelector('.resetar');
+    const el = document.querySelector('.abs');
+    const ela = document.querySelector('.a');
+    const fre1 = document.getElementById('frente');
+    const fre2 = document.getElementById('frente2');
+
+    for (let i = 0; i < cor.length; i++) {
+        const op = cor[i];
+
+        op.addEventListener('click', function () {
+            const corselec = this.getAttribute('data-color');
+            el.style.backgroundColor = corselec;
+            ela.style.backgroundColor = corselec;
+            fre1.style.backgroundColor = corselec;
+            fre2.style.backgroundColor = corselec;
+        });
+
+        resetar.addEventListener('click', function () {
+            const pad1 = '#1abc9c';
+            const pad2 = '#333';
+            el.style.backgroundColor = pad2;
+            ela.style.backgroundColor = pad1;
+            fre1.style.backgroundColor = pad1;
+            fre2.style.backgroundColor = pad1;
+        });
+    }
+});
