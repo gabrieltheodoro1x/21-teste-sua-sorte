@@ -5,7 +5,7 @@ body {
         "content"
         "footer"
         "fot";
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   grid-gap: 20px;
   color: #fff;
   font-family: Arial, sans-serif;
@@ -89,13 +89,12 @@ button:hover {
     font-weight: bold;
     color: #f9a602;
     text-align: center;
-    margin-top: 20px;
+    visibility: hidden;
 }
 
 #sair {
-  position: fixed;
+  position: sticky;
   width: 60px;
-  margin: 10px auto;
   background-color: #f9a602;
   color: #000;
   border: none;
@@ -104,7 +103,7 @@ button:hover {
   text-decoration: none;
   text-align: center;
   top: 90%;
-  left: 80%;
+  left: 90%;
 }
 
 #novoj{
@@ -145,3 +144,116 @@ button:hover {
 #ranking{
   grid-area: fot;
 }
+
+#container{
+  grid-area: content;
+  position: relative;
+  width: 70px;
+  height: 100px;
+  margin-right: 0;
+}
+
+#carta{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+
+
+#frente{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+  background: #1abc9c;
+  border-radius: 10px;
+  color:#ffffff;
+}
+
+#tras{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+  background: rgb(255, 255, 255);
+  color:#000000;
+  transform: rotateY(180deg);
+}
+
+#container2{
+  grid-area: content;
+  position: relative;
+  width: 70px;
+  height: 100px;
+  margin-left: auto; /* Defina a margem à esquerda como automática */
+  margin-right: 0;   /* Remova a margem à direita */
+  align-self: flex-end;
+}
+
+#carta2{
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  
+}
+
+
+#frente2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+  background: #1abc9c;
+  border-radius: 10px;
+  color:#ffffff;
+}
+
+#tras2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+  background: rgb(255, 255, 255);
+  color:#000000;
+  transform: rotateY(180deg);
+}
+
+#container:hover #carta {
+  transform: rotateY(180deg);
+}
+#container2:hover #carta2 {
+  transform: rotateY(180deg);
+}
+
+
+#pontuacaoComputador{
+  text-align: center;
+  font-size: 18px;
+}
+
+#pontuacaoJogador{
+  text-align: center;
+  font-size: 18px;
+}
+
+#tras, #tras2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#frente, #frente2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
