@@ -37,7 +37,7 @@ if (count > count2) {
     p1.innerHTML = count2;
 }
 
-cheet('a b a', function () {
+cheet('e g g', function () {
     window.location.href = "egg.html";
     
 });
@@ -233,3 +233,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+
+
+
+  
+  
+  

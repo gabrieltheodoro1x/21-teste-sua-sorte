@@ -14,7 +14,7 @@ body {
 }
 
 
-input {
+/* input {
     background-color: rgb(255, 255, 255);
     color: #000000;
     border: none;
@@ -22,7 +22,7 @@ input {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-right: 5px;
-}
+} */
 .header {
     text-align: center;
     padding: 50px;
@@ -49,13 +49,20 @@ input {
     color: black;
   }
   
-  @media screen and (max-width: 600px) {
-    .navbar a {
-      float: none;
-      width: 100%;
-    }
-    
+@media screen and (max-width: 660px) {
+  .navbar a {
+    float: none;
+    width: 100%;
   }
+
+  #ponto {
+    font-size: 13px;
+  }
+  #novoj {
+    font-size: 13px;
+  }
+    
+}
 
 h1 {
     text-align: center;
@@ -110,22 +117,32 @@ button:hover {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 20%;
+  top: 35%;
+}
+
+#ponto{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  padding: 20px;
 }
 
 .a {
   grid-area: header;
   text-align: center;
-  padding: 20px;
   background-color: #1abc9c;
   color: white;
   border-radius: 20px;
+  padding: 20px;
 }
 
 .b {
   grid-area: content;
   text-align: center;
   padding: 20px;
+  position: relative; /* Adicionado para definir a posição relativa */
+  z-index: 1; /* Certifica-se de que a div b está acima da div abs */
 }
 
 .abs {
@@ -139,6 +156,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  margin-top: 20px; /* Adicionado para definir a margem entre a div b e a div abs */
 }
 
 #ranking{
@@ -257,3 +275,7 @@ button:hover {
   justify-content: center;
 }
 
+.logo {
+  width: 200px;
+  margin-bottom: 0px;
+}
