@@ -141,8 +141,8 @@ button:hover {
   grid-area: content;
   text-align: center;
   padding: 20px;
-  position: relative; /* Adicionado para definir a posição relativa */
-  z-index: 1; /* Certifica-se de que a div b está acima da div abs */
+  position: relative; 
+  z-index: 1; 
 }
 
 .abs {
@@ -156,7 +156,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  margin-top: 20px; /* Adicionado para definir a margem entre a div b e a div abs */
+  margin-top: 20px; 
 }
 
 #ranking{
@@ -169,6 +169,7 @@ button:hover {
   width: 70px;
   height: 100px;
   margin-right: 0;
+  z-index: 2;
 }
 
 #carta{
@@ -207,9 +208,10 @@ button:hover {
   position: relative;
   width: 70px;
   height: 100px;
-  margin-left: auto; /* Defina a margem à esquerda como automática */
-  margin-right: 0;   /* Remova a margem à direita */
+  margin-left: auto; 
+  margin-right: 0; 
   align-self: flex-end;
+  z-index: 1;
 }
 
 #carta2{
